@@ -1,0 +1,13 @@
+.card {
+  width: 220px;
+  padding: 18px 18px 24px;
+
+  text-align: left;
+  text-decoration: none;
+
+  color: #434343;
+  border: 1px solid #9B9B9B;
+
+  @apply my-4
+    font-normal;
+}

@@ -1,0 +1,116 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "project": [
+      "./tsconfig.json"
+    ],
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "rules": {
+        "@typescript-eslint/no-redeclare": [
+          "error", {
+            "ignoreDeclarationMerge": true
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "src/pages/**",
+        "src/images.d.ts"
+      ],
+      "rules": {
+        "react/prop-types": "off",
+        "import/no-default-export": "off",
+        "import/prefer-default-export": "error"
+      }
+    }
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "prettier"
+	],
+	"rules": {
+		"semi": "error",
+		"@typescript-eslint/semi": [
+			"error"
+		],
+    "@typescript-eslint/indent": "off",
+		"@typescript-eslint/no-empty-interface": [
+			"error",
+			{
+				"allowSingleExtends": true
+			}
+		],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore"
+      }
+    ]
+  },
+	"extends": [
+    "airbnb",
+    "airbnb/hooks",
+		"eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "eslint-config-airbnb-typescript"
+	]
+}
